@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "agentic-mt5-ta"
+version = "0.1.0"
+description = "MCP technical analysis with MT5 Strategy Tester replay"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26,<3", "pandas>=2.1,<3", "mcp>=1.12,<2"]
+[project.optional-dependencies]
+mt5 = ["MetaTrader5>=5.0.45; sys_platform == 'win32'"]
+agent = ["openai>=1.40,<3"]
+dev = ["pytest>=8,<10"]
+[project.scripts]
+ta-mcp = "ta_mcp.server:main"
+ta-cli = "ta_mcp.cli:main"
+ta-agent = "ta_mcp.agent:main"
+[tool.setuptools.packages.find]
+include = ["ta_mcp*"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]

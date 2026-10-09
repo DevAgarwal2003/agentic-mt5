@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "technical-analysis": {
+      "command": "C:\\projects\\agentic-mt5\\.venv\\Scripts\\python.exe",
+      "args": ["-m", "ta_mcp.server"],
+      "env": {
+        "TA_DATA_DIR": "C:\\projects\\agentic-mt5\\data",
+        "MT5_PATH": "C:\\Program Files\\MetaTrader 5\\terminal64.exe"
+      }
+    }
+  }
+}
